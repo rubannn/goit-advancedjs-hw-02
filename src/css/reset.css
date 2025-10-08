@@ -32,3 +32,27 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+}
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input:hover,
+input:focus,
+input:active {
+  border-color: transparent;
+  outline: none;
+}

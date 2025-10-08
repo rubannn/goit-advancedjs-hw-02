@@ -1,0 +1,92 @@
+:root {
+  --border-color: #808080;
+  --text-input-color: #2e2f42;
+  --button-color: #4e75ff;
+  --button-hover-color: #6c8cff;
+}
+
+.form-container {
+  box-sizing: border-box;
+  width: 408px;
+  height: 296px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.feedback-form {
+  font-family: Montserrat;
+  overflow: hidden;
+  font-size: 16px;
+  letter-spacing: 0.04rem;
+  line-height: 1.5;
+}
+
+.feedback-form .email {
+  margin-bottom: 8px;
+}
+
+.feedback-form .message {
+  margin-bottom: 16px;
+}
+
+.email,
+.message {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+input[name='email'],
+textarea[name='message'] {
+  min-width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+
+  font-family: Montserrat;
+
+  color: var(--text-input-color);
+  padding: 8px 16px;
+}
+
+input[name='email'] {
+  height: 40px;
+}
+
+textarea[name='message'] {
+  max-height: 80px;
+}
+
+input[name='email']:hover,
+textarea[name='message']:hover,
+input[name='email']:focus,
+textarea[name='message']:focus {
+  border-color: #000000;
+  transition: border-color 0.25s;
+}
+
+button {
+  box-sizing: border-box;
+  background-color: var(--button-color);
+  border: none;
+  height: 40px;
+  width: 95px;
+  font-size: 16px;
+  font-weight: 500;
+
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #fff;
+  letter-spacing: 0.04rem;
+}
+
+button:hover,
+button:focus {
+  border: none;
+  background-color: var(--button-hover-color);
+  transition: background-color 0.25s;
+}

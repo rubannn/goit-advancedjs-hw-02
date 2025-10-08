@@ -1,0 +1,105 @@
+body.timer-page {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.timer-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 30px 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.input-button {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#datetime-picker {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    min-width: 0;
+    /* важно, чтобы не ломалась верстка при сжатии */
+}
+
+#datetime-picker:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 8px #38bdf8;
+}
+
+button[data-start] {
+    flex-shrink: 0;
+    /* предотвращает сжатие кнопки */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[data-start]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.6);
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.field {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.4);
+    min-width: 80px;
+}
+
+.value {
+    font-size: 32px;
+    font-weight: bold;
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.label {
+    font-size: 14px;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Анимация */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

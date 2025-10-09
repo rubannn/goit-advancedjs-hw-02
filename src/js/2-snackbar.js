@@ -38,7 +38,7 @@ function showSuccessToast(delay) {
     message: `Fulfilled promise in ${delay}ms`,
     closeOnClick: true,
     position: 'topRight',
-    displayMode: 0,
+    timeout: delay,
     progressBar: false,
   });
 }
@@ -52,7 +52,7 @@ function showErrorToast(delay) {
     message: `Rejected promise in ${delay}ms`,
     closeOnClick: true,
     position: 'topRight',
-    displayMode: 0,
+    timeout: delay,
     progressBar: false,
   });
 }
@@ -65,6 +65,17 @@ function handleFormSubmit(event) {
   event.preventDefault();
 
   const delay = parseInt(elements.delayInput.value);
+
+  if (isNaN(delay) || delay <= 0) {
+    iziToast.error({
+      message: 'Please enter a valid number greater than 0',
+      closeOnClick: true,
+      position: 'topRight',
+    });
+    elements.delayInput.value = 0;
+    return;
+  }
+
   const promiseState = elements.radioButtons.fulfilled.checked
     ? 'fulfilled'
     : 'rejected';
